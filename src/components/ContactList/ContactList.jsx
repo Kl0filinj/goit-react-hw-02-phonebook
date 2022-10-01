@@ -22,7 +22,13 @@ const ContactList = ({ contactsList, onDelete }) => {
 };
 
 ContactList.propTypes = {
-  contactsList: PropTypes.array.isRequired,
+  contactsList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
   onDelete: PropTypes.func.isRequired,
 };
 
